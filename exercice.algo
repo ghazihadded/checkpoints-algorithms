@@ -1,0 +1,28 @@
+PROCEDURE swap(var x :INTEGER ,var y:INTEGER)
+VAR
+    num:INTEGER;
+BEGIN
+    num:=x ;
+    x:=y ;
+    y:=num ;
+END
+PROCEDURE tri_carte(var arr:ARRAY_OF INTEGER)
+VAR
+    n,i,j,min-ind:INTEGER ;
+BEGIN
+    n:= arr.length ;
+    FOR i FROM 0 TO n-2 STEP 1 DO
+       
+           min :=i ;
+        FOR j FROM i+1 TO n-1 STEP 1  DO
+            IF (arr[j]<arr[min]) THEN
+                min := j
+            END_IF
+        END_FOR
+      swap (arr[i],arr[min]); 
+      
+      END_IF
+  
+         END_FOR
+    
+END

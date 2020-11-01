@@ -1,0 +1,76 @@
+FUNCTION read-size  (n:INTEGER) : INTEGER
+VAR
+   i:INTEGER
+BEGIN
+   REPEAT
+      read(n);
+   UNTIL (n<=0 ;n>50)
+   RETURN n ;
+END
+
+
+
+PROCEDURE read-array(n:INTEGER ,var t:ARRAY_OF INTEGER)
+VAR
+   i:INTEGER ;
+BEGIN
+
+  FOR i FROM 0 TO n-1 STEP 1  DO
+     read(t[i]);
+  END_FOR   
+END
+
+
+FUNCTION dot_product (var v1,v2 :ARRAY_OF INTEGER;var ps:INTEGER) : INTEGER
+VAR
+  i, n:INTEGER ;
+BEGIN
+ps:=0 ;
+
+
+    FOR i FROM 0 TO n-1 STEP 1  DO
+    IF (n%2:=0) THEN
+      ps:=ps+v1[i]*v2[i];
+   END_FOR
+  
+END_IF
+   RETURN ps ; 
+END 
+
+PROCEDURE dot_products(v1,v2:ARRAY_OF INTEGER ;var ps:INTEGER )
+VAR
+   i:INTEGER ;
+BEGIN
+  ps:=0 ;
+
+
+    FOR i FROM 0 TO n-1 STEP 1  DO
+      ps:=ps+v1[i]*v2[i];
+   END_FOR
+   END_IF
+   write (ps);
+END    
+
+
+
+
+ALGORITHM  produit sacalire
+VAR
+   orthogonal : BOOLEAN :
+   i ,ps , n:INTEGER ;
+   v1,v2 :ARRAY_OF INTEGER [50]
+BEGIN
+n:= read-size(n)
+read-array(n,v1)
+read-array(n,v2)
+ps:= dot_product (v1,v2,ps);
+// dot_products(v1,v2,ps)
+// write (ps);
+IF (ps:=0) THEN
+    orthogonal := true ;
+    ELSE
+    orthogonal := false ;
+    
+END_IF
+    
+END

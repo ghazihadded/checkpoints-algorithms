@@ -1,0 +1,81 @@
+ALGORITHM exercice
+
+VAR
+    tab1  : ARRAY_OF INTEGER[5];
+    tab2:  ARRAY_OF INTEGER[5];
+    i,x ,htabTest :INTEGER
+     som1,som2,result :INTEGER :=0;
+     test:BOOLEAN ;
+     htab =HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+     FOR x FROM 0 TO tab2.length-1 STEP 1 DO
+      
+      IF (tab1[i]=tab2[x]) THEN
+          test:=false;
+          break ;
+        ELSE
+        test:= true ;
+          
+      END_IF
+
+     END_FOR
+     IF (test1:=true) THEN
+         som1:= som+tab1[i] ;
+     END_IF
+    END_FOR
+          FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+             FOR x FROM 0 TO tab1.length-1 STEP 1 DO
+      
+             IF (tab2[i]=tab1[x]) THEN
+               test:=false;
+             break ;
+              ELSE
+              test:= true ;
+          
+             END_IF
+ 
+           END_FOR
+              IF (test1:=true) THEN
+              som2:= som+tab2[i] ;
+             END_IF
+             END_FOR
+  result := som1+som2 ;
+  write (result);
+
+END
+
+
+//  exercice 2 avec hash table
+
+BEGIN
+
+FOR i FROM 0 TO tab1.length STEP 1  DO
+    IF (htab.lookup(tab1[i]=true)) THEN
+       htabTest :=htab.get(tab1[i])
+       htab.insert(tab1[i],htabTest+1) 
+       ELSE 
+       htab.insert(tab1[i],1)
+    END_IF
+    IF (htab.get(tab1[i])<>1) THEN
+        som1:= som1 +tab1[i];
+    END_IF
+END_FOR
+
+
+FOR x FROM 0 TO tab2.length STEP 1  DO
+    IF (htab.lookup(tab2[x]=true)) THEN
+       htabTest :=htab.get(tab2[x])
+       htab.insert(tab1[x],htabTest+1) 
+       ELSE 
+       htab.insert(tab1[x],1)
+    END_IF
+    IF (htab.get(tab1[x])<>1) THEN
+        som2:= som2 +tab2[x]*2
+    END_IF
+END_FOR
+
+result :=som1+som2 ;
+write (result);
+
+END

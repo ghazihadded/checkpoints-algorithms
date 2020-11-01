@@ -1,0 +1,33 @@
+ALGORITHM  exercice
+
+VAR
+    phrase:=STRING ;
+    lp ,nbm ,nbv :=INTEGER := 0;
+    i,x:=INTEGER:=0;
+BEGIN
+    read (phrase)
+  
+ WHILE (i<length(phrase)-1) DO
+     lp:=lp+1
+     i:=i+1 
+ END_WHILE
+
+write ('La longueur de la phrase est',lp)
+
+FOR i FROM 0 TO length(phrase)-1 STEP 1  DO
+     IF (phrase[i]:=' ' or phrase[i]:='.' or i:=phrase.length-1) THEN
+         nbm :=nbm +1 ;
+     END_IF
+END_FOR
+write ('The number of words in the sentence :' +nbm )
+ 
+ WHILE (x<length(phrase)-1) DO
+     if(phrase[x]:='a' or phrase[x]:='e' or phrase[x]:='i' or phrase[x]:='o' or phrase[x]:='y' or phrase[x]= u ) THEN
+     nbv := nbv+1
+       else 
+       nbv := nbv 
+        END_IF
+     x:=x+1
+ END_WHILE
+write ('The number of vowels in the sentence :'+nbv)
+END
